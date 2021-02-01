@@ -1,0 +1,275 @@
+<!-- Ex 17.1 - Href attributes - Author: Ayelet Danieli -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.1</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin: 20px 10px;
+        }
+
+
+        a::after {
+            content: "("attr(href) ")";
+        }
+
+        .box {
+            background-color: purple;
+            width: 150px;
+            height: 300px;
+            position: relative;
+        }
+
+        .box::after {
+            content: "after";
+            background-color: red;
+            width: 50%;
+            top: 0;
+            left: 50%;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+        }
+
+        .box3:hover {
+            background-color: sandybrown;
+        }
+
+        /* /////////////////////////// */
+
+        .section4>#content {
+            content: "";
+            position: relative;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            z-index: 10;
+        }
+
+        .cell>h1 {
+            display: flex;
+            color: white;
+            line-height: 1.2;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section4>#content:before,
+        .section4>#content:after,
+        .section4>#content>:last-child:before,
+        .section4>#content>:last-child:after {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-color: red;
+            border-style: solid;
+            content: ' ';
+        }
+
+        .section4>#content:before {
+            top: 20px;
+            left: 20px;
+            border-width: 2px 0 0 2px
+        }
+
+        .section4>#content:after {
+            top: 20px;
+            right: 20px;
+            border-width: 2px 2px 0 0;
+            border-color: green;
+
+        }
+
+        .section4>#content>:last-child:before {
+            border-color: blue;
+            bottom: 20px;
+            right: 20px;
+            border-width: 0 2px 2px 0
+        }
+
+        .section4>#content>:last-child:after {
+            border-color: violet;
+            bottom: 20px;
+            left: 20px;
+            border-width: 0 0 2px 2px
+        }
+
+        /* /////////////////////////// */
+       
+        .section5>#content {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            top: 0;
+            left: 0;
+            margin: auto 0;
+            background-color: black;
+            z-index: 10;
+        }
+
+        .section5>#content>.cell {
+            background: black;
+            border: 3px solid red;
+            /* padding: 10px; */
+            /* margin: 4px; */
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            position: relative;
+            margin: auto 0;
+            z-index: 0;
+            /* top: 0; */
+            /* margin: 20px 10px; */
+            /* margin: auto 0; */
+            /* display: block; */
+        }
+
+        
+        .section5>#content::after {
+            /* content: "after"; */
+            background-color:black;
+            top: 20%;
+            left: 30%;
+            position: absolute;
+            width: calc(40% + 6px);
+            height: calc(60% + 6px);
+            z-index: 10;
+            /* padding: 0px; */
+            /* margin: -5px; */
+        }
+        
+        .section5>#content::before {
+            content:"before";
+            position: absolute;
+            /* margin: auto 0; */
+            background-color: black;
+            width: calc(60% + 6px);
+            height:calc(40% + 6px);
+            top: 30%;
+            left: 20%;
+            z-index: 10;
+            
+        }
+        
+        .section5>#content>.cell>h1 {
+            position: relative;
+            /* width: 100%; */
+            /* top: calc(20% - 3px); */
+            /* left: -3px; */
+            /* margin: auto 0; */
+            z-index: 100;
+        }
+
+        /* /////////////////////////// */
+
+        .section6 .tooltip {
+            color: tomato;
+            position: relative;
+        }
+
+        .section6 .tooltip:hover {
+            background: yellow;
+        }
+
+        .section6 .tooltip:hover::before {
+            content: "This is a tooltip";
+            position: absolute;
+            background-color: yellowgreen;
+            text-align: center;
+            overflow: auto;
+            width: 300%;
+            height: 30px;
+            top: -40px;
+            left: -10px;
+            border-radius: 12px;
+        }
+
+        .tooltip:hover::after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 25px solid yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pseudo Selectors</h1>
+    <h2>Ex. 17.1</h2>
+    <p>Please visit this <a href="https://www.google.com">Website</a> for more information</p>
+
+
+    <section class="section2">
+        <h2>Ex. 17.2</h2>
+        <div class="box box2">
+            Box 2
+        </div>
+
+    </section>
+    <section class="section3">
+        <h2>Ex. 17.3</h2>
+        <div class="box box3">
+            Box 3
+        </div>
+    </section>
+
+    <section class="section4">
+        <h2>Ex. 17.4(1) Cool Border</h2>
+        <div id="content" class="coolborder">
+            <div class="cell">
+                <h1>Cool Border</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section5">
+        <h2>Ex. 17.4(2) Cool Border</h2>
+        <div id="content" class="coolborder">
+            <div class="cell">
+                <h1>Cool Border</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section6">
+        <div class="tooltip-box">
+
+            <h2>Ex. 17.5 - Tooltip</h2>
+            <div class="tooltip-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sequi aperiam expedita. Voluptatum,
+                    aut ea
+                    provident iure aperiam unde explicabo blanditiis doloribus distinctio perferendis cupiditate
+                    repellendus
+                    numquam error <span class="tooltip">sapiente</span> veniam quam, labore quas. Eveniet ex
+                    consequatur,
+                    itaque consectetur eligendi
+                    natus qui neque deserunt saepe doloremque in minima reprehenderit cum sit? Asperiores voluptatem
+                    sequi
+                    explicabo. Itaque cupiditate sapiente, eum mollitia architecto dicta nostrum minima consequuntur.
+                    Officia fuga, inventore vitae a rem modi sequi est consequatur repellendus distinctio labore dolores
+                    soluta ab voluptatibus tempore ad sapiente quidem magni sint architecto veniam corrupti quo! Quasi
+                    deleniti perspiciatis inventore consectetur accusantium fugiat autem facere?</p>
+            </div>
+
+    </section>
+
+
+</body>
+
+</html>

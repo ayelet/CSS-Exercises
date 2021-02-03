@@ -1,0 +1,138 @@
+/* Ex. 24.4 - Image Gallery - Author: Ayelet Danieli */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #000;
+  /* max-height: 100vh; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  background-color: white;
+}
+
+.item {
+  /* padding: 3rem; */
+  /* border-radius: 12px; */
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #AAA;
+  /* color: #000; */
+  height: 100%;
+  width: 100%;
+}
+
+.grid {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+}
+
+.item:nth-child(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  /* background: red; */
+  background: url('./images/gal-1.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(2) {
+  grid-column: 3 / span 3;
+  grid-row: 1 / span 3;
+  /* background: red; */
+  background: url('./images/gal-2.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(3) {
+  /* grid-column: 3 / span 3; */
+  grid-row: 1 / span 2;
+  /* background: red; */
+  background: url('./images/gal-3.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(4) {
+  grid-column: 7 / span 2;
+  grid-row: 1 / span 2;
+  /* background: red; */
+  background: url('./images/gal-4.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(5) {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 3;
+  /* background: red; */
+  background: url('./images/gal-5.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(6) {
+  grid-column: 3 / span 2;
+  grid-row: 4 / span 2;
+  /* background: red; */
+  background: url('./images/gal-6.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(7) {
+  grid-column: 5 / span 1;
+  grid-row: 4 / span 1;
+  /* background: red; */
+  background: url('./images/gal-7.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(8) {
+  grid-row: 3 / span 2;
+  grid-column: 6 / span 2;
+  /* background: red; */
+  background: url('./images/gal-8.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(9) {
+  grid-row: 3 / span 3;
+  /* grid-column: 6 / span 2; */
+  background: url('./images/gal-9.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(10) {
+  grid-row: 6 / span 2;
+  grid-column: 1 / span 1;
+  background: url('./images/gal-10.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(11) {
+  grid-row: 6 / span 2;
+  grid-column: 2 / span 2;
+  background: url('./images/gal-11.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(11) {
+  grid-row: 6 / span 2;
+  grid-column: 2 / span 2;
+  background: url('./images/gal-11.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(12) {
+  grid-row: 6 / span 2;
+  grid-column: 4 / span 1;
+  background: url('./images/gal-12.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(13) {
+  grid-row: 5 / span 3;
+  grid-column: 5 / span 3;
+  background: url('./images/gal-13.jpeg') no-repeat center center/cover;
+}
+
+.item:nth-child(14) {
+  grid-row: 6 / span 2;
+  grid-column: 8 / span 1;
+  background: url('./images/gal-14.jpeg') no-repeat center center/cover;
+}
+
